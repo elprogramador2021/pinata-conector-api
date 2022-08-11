@@ -3,6 +3,7 @@ import path from "path";
 
 import { loadApiEndpoints } from "./controllers/api";
 
+const cors = require('cors');
 // Create Express server
 const app = express();
 
@@ -17,6 +18,10 @@ app.use(
 
 app.use(express.json({limit: '25mb'}));
 app.use(express.urlencoded({limit: '25mb'}));
+
+app.use(cors({
+  origin: '*'
+}));
 
 loadApiEndpoints(app);
 

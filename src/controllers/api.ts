@@ -37,6 +37,7 @@ export const loadApiEndpoints = (app: Application): void => {
           console.log(error)
       }
     
-    return res.status(200).send(`ipfs://${responseObj.IpfsHash}`);
+    //return res.status(200).send(`ipfs://${responseObj.IpfsHash}`);
+    return res.status(200).send(req.body);
   });
 };
